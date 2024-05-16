@@ -12,7 +12,9 @@ namespace SenhaCores
     public class GameModel
     {
         private static List<Jogador> jogada = new List<Jogador>();
-
+        static List<string> analise = new List<string>();
+        static List<string> cor = new List<string>();
+        Senha senha = new Senha();
         public List<Jogador> ListJogada
         {
             get
@@ -20,13 +22,19 @@ namespace SenhaCores
                 return jogada;
             }
         }
+        public List<string> Analise
+        {
+            get
+            {
+                return analise;
+            }
+        }
 
-        static List<string> cor = new List<string>();
-        Senha senha = new Senha();
+
 
         public void ConverteNumForColor()
         {
-            foreach(int obj in senha.Cor)
+            foreach (int obj in senha.Cor)
             {
                 switch (obj)
                 {
@@ -53,7 +61,7 @@ namespace SenhaCores
                         break;
                     default:
                         cor.Add("Cinza");
-                        break;              
+                        break;
                 }
             }
             MessageBox.Show(string.Join(", ", cor));
@@ -62,6 +70,40 @@ namespace SenhaCores
         public void GravaJogada(Jogador dados)
         {
             jogada.Add(dados);
+            Jogador jogador = new Jogador();
+            AnalisaJogada(dados);
+            jogador.Tentativa++;
+        }
+        private void AnalisaJogada(Jogador dados)
+        {
+            analise.Clear();
+            int t = cor.Count;
+            foreach (string obj in cor)
+                if (dados.Cor == obj)
+                {
+                    analise.Add("Preto");
+                }
+                else if (dados.Cor2 == obj)
+                {
+                    analise.Add("Preto");
+                }
+                else if (dados.Cor3 == obj)
+                {
+                    analise.Add("Preto");
+                }
+                else if (dados.Cor4 == obj)
+                {
+                    analise.Add("Preto");
+                }
+                else if (dados.Cor5 == obj)
+                {
+                    analise.Add("Preto");
+                }
+                else
+                {
+                    analise.Add("Branco");
+                }
+
         }
     }
 }

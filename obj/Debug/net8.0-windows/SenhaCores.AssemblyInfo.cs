@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SenhaCores")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b588e3c6efcb023450ee8e694099639e5ef8012e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SenhaCores")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SenhaCores")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

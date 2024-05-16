@@ -38,5 +38,9 @@ namespace SenhaCores
         {
             get; set;
         }
+        Label Tentativa
+        {
+            get; set;
+        }
     }
 }

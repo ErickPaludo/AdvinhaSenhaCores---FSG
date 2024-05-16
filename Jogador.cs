@@ -9,6 +9,12 @@ namespace SenhaCores
     public class Jogador
     {
         private string cor, cor2, cor3, cor4, cor5;
+        static private int tentativa;
+        public int Tentativa
+        {
+            get { return tentativa; }
+            set { tentativa = value; }
+        }
 
         public string Cor
         {

@@ -84,6 +84,17 @@ namespace SenhaCores
                 dataGridResultado = value;
             }
         }
+        public Label Tentativa
+        {
+            get
+            {
+                return lTentativas;
+            }
+            set
+            {
+                lTentativas = value;
+            }
+        }
 
         public void SetController(GameController controller)
         {
@@ -93,7 +104,7 @@ namespace SenhaCores
         private void Play(object sender, EventArgs e)
         {
            // controller.Jogada();
-           controller.ClearCamp();
+           controller.Jogada();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace SenhaCores
     {
         IGameView usuariosView;
         GameModel usuariosModel;
-
+        Jogador info = new Jogador();
         public GameController(IGameView usuariosView, GameModel usuariosModel)
         {
             this.usuariosView = usuariosView;
@@ -19,6 +19,7 @@ namespace SenhaCores
             usuariosView.SetController(this);
             Senha senha = new Senha();
             senha.Gerador();
+            usuariosModel.ConverteNumForColor();
         }
         public void MostrarSenha()
         {
@@ -30,8 +31,12 @@ namespace SenhaCores
             if (IsNull())
             {
                usuariosModel.GravaJogada(new Jogador(usuariosView.Camp1.Text, usuariosView.Camp2.Text, usuariosView.Camp3.Text, usuariosView.Camp4.Text, usuariosView.Camp5.Text));
+
+                usuariosView.Tentativa.Text = $"{info.Tentativa}/10";
+
                 ClearCamp();
                 MostrarJogada();
+                ResultadoJogada();
             }
         }
         private void MostrarJogada()
@@ -42,14 +47,20 @@ namespace SenhaCores
                 usuariosView.TabelaJogador.Rows.Add(obj.Cor,obj.Cor2,obj.Cor3,obj.Cor4,obj.Cor5);
             }
         }
+        private void ResultadoJogada()
+        {
+            int test = usuariosModel.Analise.Count;
+            usuariosView.TabelaResultado.Rows.Add(usuariosModel.Analise[0], usuariosModel.Analise[1], usuariosModel.Analise[2], usuariosModel.Analise[3], usuariosModel.Analise[4]);
+            
+        }
 
         public void ClearCamp()
         {
-            usuariosView.Camp1.Text = string.Empty;
-            usuariosView.Camp2.Text = string.Empty;
-            usuariosView.Camp3.Text = string.Empty;
-            usuariosView.Camp4.Text = string.Empty;
-            usuariosView.Camp5.Text = string.Empty;
+            usuariosView.Camp1.SelectedIndex = -1;
+            usuariosView.Camp2.SelectedIndex = -1;
+            usuariosView.Camp3.SelectedIndex = -1;
+            usuariosView.Camp4.SelectedIndex = -1;
+            usuariosView.Camp5.SelectedIndex = -1;
         }
 
 

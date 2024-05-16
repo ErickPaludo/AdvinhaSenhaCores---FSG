@@ -49,6 +49,8 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            label3 = new Label();
+            lTentativas = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridResultado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridJogada).BeginInit();
@@ -56,6 +58,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lTentativas);
+            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(bJogar);
             groupBox1.Controls.Add(comboCamp5);
             groupBox1.Controls.Add(comboCamp4);
@@ -64,7 +68,7 @@
             groupBox1.Controls.Add(comboCamp);
             groupBox1.Location = new Point(18, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(770, 60);
+            groupBox1.Size = new Size(926, 60);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Jogada";
@@ -133,9 +137,9 @@
             // 
             dataGridResultado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridResultado.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridResultado.Location = new Point(420, 108);
+            dataGridResultado.Location = new Point(496, 108);
             dataGridResultado.Name = "dataGridResultado";
-            dataGridResultado.Size = new Size(368, 318);
+            dataGridResultado.Size = new Size(448, 318);
             dataGridResultado.TabIndex = 2;
             // 
             // Column1
@@ -180,7 +184,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(420, 90);
+            label2.Location = new Point(479, 90);
             label2.Name = "label2";
             label2.Size = new Size(64, 15);
             label2.TabIndex = 4;
@@ -192,7 +196,7 @@
             dataGridJogada.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
             dataGridJogada.Location = new Point(18, 108);
             dataGridJogada.Name = "dataGridJogada";
-            dataGridJogada.Size = new Size(386, 318);
+            dataGridJogada.Size = new Size(448, 318);
             dataGridJogada.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
@@ -225,11 +229,29 @@
             dataGridViewTextBoxColumn5.HeaderText = "Campo 5";
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(815, 15);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Tentativas";
+            // 
+            // lTentativas
+            // 
+            lTentativas.AutoSize = true;
+            lTentativas.Location = new Point(830, 35);
+            lTentativas.Name = "lTentativas";
+            lTentativas.Size = new Size(30, 15);
+            lTentativas.TabIndex = 7;
+            lTentativas.Text = "0/10";
+            // 
             // GameView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(962, 450);
             Controls.Add(dataGridJogada);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -238,6 +260,7 @@
             Name = "GameView";
             Text = "Form1";
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridResultado).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridJogada).EndInit();
             ResumeLayout(false);
@@ -267,5 +290,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private Label lTentativas;
+        private Label label3;
     }
 }
