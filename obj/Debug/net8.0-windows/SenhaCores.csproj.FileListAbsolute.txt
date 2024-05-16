@@ -31,3 +31,20 @@ C:\Users\erick\OneDrive\Área de Trabalho\AdvinhaSenhaCores---FSG\obj\Debug\net8
 C:\Users\erick\OneDrive\Área de Trabalho\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.pdb
 C:\Users\erick\OneDrive\Área de Trabalho\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.genruntimeconfig.cache
 C:\Users\erick\OneDrive\Área de Trabalho\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\ref\SenhaCores.dll
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\bin\Debug\net8.0-windows\SenhaCores.exe
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\bin\Debug\net8.0-windows\SenhaCores.deps.json
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\bin\Debug\net8.0-windows\SenhaCores.runtimeconfig.json
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\bin\Debug\net8.0-windows\SenhaCores.dll
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\bin\Debug\net8.0-windows\SenhaCores.pdb
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.GameView.resources
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.csproj.GenerateResource.cache
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.AssemblyInfoInputs.cache
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.AssemblyInfo.cs
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.csproj.CoreCompileInputs.cache
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.sourcelink.json
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.dll
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\refint\SenhaCores.dll
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.pdb
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\SenhaCores.genruntimeconfig.cache
+C:\Users\Erick\Desktop\AdvinhaSenhaCores---FSG\obj\Debug\net8.0-windows\ref\SenhaCores.dll

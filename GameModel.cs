@@ -30,10 +30,9 @@ namespace SenhaCores
             }
         }
 
-
-
         public void ConverteNumForColor()
         {
+            cor.Clear();
             foreach (int obj in senha.Cor)
             {
                 switch (obj)
@@ -64,9 +63,8 @@ namespace SenhaCores
                         break;
                 }
             }
-            MessageBox.Show(string.Join(", ", cor));
+            //MessageBox.Show(string.Join(", ", cor));
         }
-
         public void GravaJogada(Jogador dados)
         {
             jogada.Add(dados);
@@ -77,33 +75,102 @@ namespace SenhaCores
         private void AnalisaJogada(Jogador dados)
         {
             analise.Clear();
-            int t = cor.Count;
-            foreach (string obj in cor)
-                if (dados.Cor == obj)
-                {
-                    analise.Add("Preto");
-                }
-                else if (dados.Cor2 == obj)
-                {
-                    analise.Add("Preto");
-                }
-                else if (dados.Cor3 == obj)
-                {
-                    analise.Add("Preto");
-                }
-                else if (dados.Cor4 == obj)
-                {
-                    analise.Add("Preto");
-                }
-                else if (dados.Cor5 == obj)
-                {
-                    analise.Add("Preto");
-                }
-                else
-                {
-                    analise.Add("Branco");
-                }
 
+            for (int i = 0; i < 5; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        if (dados.Cor == cor[0])
+                        {
+                            analise.Add("Preto");
+                        }
+                        else
+                        {
+                            analise.Add(ExisteNaSenha(dados.Cor));
+                        }
+                        break;
+                    case 1:
+                        if (dados.Cor2 == cor[1])
+                        {
+                            analise.Add("Preto");
+                        }
+                        else
+                        {
+                            analise.Add(ExisteNaSenha(dados.Cor2));
+                        }
+                        break;
+                    case 2:
+                        if (dados.Cor3 == cor[2])
+                        {
+                            analise.Add("Preto");
+                        }
+                        else
+                        {
+                            analise.Add(ExisteNaSenha(dados.Cor3));
+                        }
+                        break;
+                    case 3:
+                        if (dados.Cor4 == cor[3])
+                        {
+                            analise.Add("Preto");
+                        }
+                        else
+                        {
+                            analise.Add(ExisteNaSenha(dados.Cor4));
+                        }
+                        break;
+                    default:
+                        if (dados.Cor5 == cor[4])
+                        {
+                            analise.Add("Preto");
+                        }
+                        else
+                        {
+                            analise.Add(ExisteNaSenha(dados.Cor5));
+                        }
+                        break;
+                }
+            }
+        }
+        private string ExisteNaSenha(string dados)
+        {
+            foreach (string obj in cor)
+            {
+                if (obj == dados)
+                {
+                    return "Branco";
+                }
+            }
+            return "Vermelho";
+        }
+        public bool Resultado()
+        {
+            int j = 0; //pontos
+            for (int i = 0; i < 5; i++)
+            {
+                if (analise[i] == "Preto")
+                {
+                    j++;
+                }
+            }
+            if (j == 5)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }       
+        }
+        public void Restart()
+        {
+            senha.Gerador();
+            ConverteNumForColor();
+            jogada.Clear();
+            Jogador info = new Jogador();
+            info.Tentativa = 0;
         }
     }
 }
+

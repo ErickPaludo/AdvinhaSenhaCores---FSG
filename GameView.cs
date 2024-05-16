@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace SenhaCores
 {
     public partial class GameView : Form, IGameView
@@ -95,6 +97,39 @@ namespace SenhaCores
                 lTentativas = value;
             }
         }
+        public Button Jogar
+        {
+            get
+            {
+                return bJogar;
+            }
+            set
+            {
+                bJogar = value;
+            }
+        }
+        public Label Resultado
+        {
+            get
+            {
+                return lResult;
+            }
+            set
+            {
+                lResult = value;
+            }
+        }
+        public Button Reiniciar
+        {
+            get
+            {
+                return bReiniciar;
+            }
+            set
+            {
+                bReiniciar = value;
+            }
+        }
 
         public void SetController(GameController controller)
         {
@@ -103,8 +138,17 @@ namespace SenhaCores
 
         private void Play(object sender, EventArgs e)
         {
-           // controller.Jogada();
-           controller.Jogada();
+            controller.Jogada();
+        }
+
+        private void Restart(object sender, EventArgs e)
+        {
+            controller.ReiniciarGame();
+        }
+
+        private void RecarregarInfo(object sender, DataGridViewCellEventArgs e)
+        {
+            controller.RecarregarDados(dataGridJogada.SelectedCells[0].RowIndex);
         }
     }
 }

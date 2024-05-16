@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            lTentativas = new Label();
+            label3 = new Label();
             bJogar = new Button();
             comboCamp5 = new ComboBox();
             comboCamp4 = new ComboBox();
@@ -49,11 +51,19 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            label3 = new Label();
-            lTentativas = new Label();
+            lResult = new Label();
+            groupBox2 = new GroupBox();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            bReiniciar = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridResultado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridJogada).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -68,14 +78,32 @@
             groupBox1.Controls.Add(comboCamp);
             groupBox1.Location = new Point(18, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(926, 60);
+            groupBox1.Size = new Size(902, 60);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Jogada";
             // 
+            // lTentativas
+            // 
+            lTentativas.AutoSize = true;
+            lTentativas.Location = new Point(821, 35);
+            lTentativas.Name = "lTentativas";
+            lTentativas.Size = new Size(30, 15);
+            lTentativas.TabIndex = 7;
+            lTentativas.Text = "0/10";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(807, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Tentativas";
+            // 
             // bJogar
             // 
-            bJogar.Location = new Point(626, 15);
+            bJogar.Location = new Point(647, 15);
             bJogar.Name = "bJogar";
             bJogar.Size = new Size(131, 35);
             bJogar.TabIndex = 1;
@@ -137,7 +165,7 @@
             // 
             dataGridResultado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridResultado.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridResultado.Location = new Point(496, 108);
+            dataGridResultado.Location = new Point(472, 156);
             dataGridResultado.Name = "dataGridResultado";
             dataGridResultado.Size = new Size(448, 318);
             dataGridResultado.TabIndex = 2;
@@ -175,7 +203,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(18, 90);
+            label1.Location = new Point(18, 128);
             label1.Name = "label1";
             label1.Size = new Size(49, 15);
             label1.TabIndex = 3;
@@ -184,7 +212,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(479, 90);
+            label2.Location = new Point(472, 128);
             label2.Name = "label2";
             label2.Size = new Size(64, 15);
             label2.TabIndex = 4;
@@ -194,10 +222,11 @@
             // 
             dataGridJogada.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridJogada.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
-            dataGridJogada.Location = new Point(18, 108);
+            dataGridJogada.Location = new Point(18, 156);
             dataGridJogada.Name = "dataGridJogada";
             dataGridJogada.Size = new Size(448, 318);
             dataGridJogada.TabIndex = 5;
+            dataGridJogada.CellDoubleClick += RecarregarInfo;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -229,29 +258,109 @@
             dataGridViewTextBoxColumn5.HeaderText = "Campo 5";
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // label3
+            // lResult
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(815, 15);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Tentativas";
+            lResult.AutoSize = true;
+            lResult.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lResult.Location = new Point(18, 85);
+            lResult.Name = "lResult";
+            lResult.Size = new Size(0, 32);
+            lResult.TabIndex = 6;
             // 
-            // lTentativas
+            // groupBox2
             // 
-            lTentativas.AutoSize = true;
-            lTentativas.Location = new Point(830, 35);
-            lTentativas.Name = "lTentativas";
-            lTentativas.Size = new Size(30, 15);
-            lTentativas.TabIndex = 7;
-            lTentativas.Text = "0/10";
+            groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Location = new Point(18, 480);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(529, 84);
+            groupBox2.TabIndex = 7;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Manual de resultados";
+            // 
+            // label9
+            // 
+            label9.Location = new Point(284, 34);
+            label9.Name = "label9";
+            label9.Size = new Size(125, 45);
+            label9.TabIndex = 12;
+            label9.Text = "A cor não está presente na senha";
+            // 
+            // label8
+            // 
+            label8.Location = new Point(129, 35);
+            label8.Name = "label8";
+            label8.Size = new Size(149, 46);
+            label8.TabIndex = 11;
+            label8.Text = "A cor existe na senha, mas sua posição é incorreta";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(6, 45);
+            label7.Name = "label7";
+            label7.Size = new Size(109, 15);
+            label7.TabIndex = 8;
+            label7.Text = "Cor está na correta.";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = SystemColors.Control;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(284, 19);
+            label6.Name = "label6";
+            label6.Size = new Size(61, 15);
+            label6.TabIndex = 10;
+            label6.Text = "Vermelho";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = SystemColors.AppWorkspace;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(129, 19);
+            label5.Name = "label5";
+            label5.Size = new Size(46, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Branco";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.Control;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Location = new Point(6, 19);
+            label4.Name = "label4";
+            label4.Size = new Size(38, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Preto";
+            // 
+            // bReiniciar
+            // 
+            bReiniciar.Enabled = false;
+            bReiniciar.Location = new Point(789, 506);
+            bReiniciar.Name = "bReiniciar";
+            bReiniciar.Size = new Size(131, 35);
+            bReiniciar.TabIndex = 8;
+            bReiniciar.Text = "Reiniciar";
+            bReiniciar.UseVisualStyleBackColor = true;
+            bReiniciar.Click += Restart;
             // 
             // GameView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(962, 450);
+            ClientSize = new Size(945, 576);
+            Controls.Add(bReiniciar);
+            Controls.Add(groupBox2);
+            Controls.Add(lResult);
             Controls.Add(dataGridJogada);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -263,6 +372,8 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridResultado).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridJogada).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -292,5 +403,14 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private Label lTentativas;
         private Label label3;
+        private Label lResult;
+        private GroupBox groupBox2;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label8;
+        private Label label9;
+        private Button bReiniciar;
     }
 }

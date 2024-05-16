@@ -42,5 +42,17 @@ namespace SenhaCores
         {
             get; set;
         }
+        Button Jogar
+        {
+            get;set;
+        }
+        Label Resultado
+        {
+            get; set;
+        }
+        Button Reiniciar
+        {
+            get;set;
+        }
     }
 }
